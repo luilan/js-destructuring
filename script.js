@@ -67,6 +67,10 @@ console.log(...arr)
 console.log(arr)
 
 console.log(...'leonardo')
+const parr =["putta","carbo","lasa"]
+
+
+restaurant.orderPasta(...parr)
 /*
 ///////////////////////////////////////
 // String Methods Practice
