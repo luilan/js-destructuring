@@ -1,4 +1,26 @@
 'use strict';
+function range(start, stop, step) {
+    if (typeof stop == 'undefined') {
+        // one param defined
+        stop = start;
+        start = 0;
+    }
+
+    if (typeof step == 'undefined') {
+        step = 1;
+    }
+
+    if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {
+        return [];
+    }
+
+    var result = [];
+    for (var i = start; step > 0 ? i < stop : i > stop; i += step) {
+        result.push(i);
+    }
+
+    return result;
+};
 
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
@@ -71,6 +93,36 @@ const parr =["putta","carbo","lasa"]
 
 
 restaurant.orderPasta(...parr)
+const newRes = {...restaurant,boss: "gianluigi" }
+
+
+console.log(newRes.boss);
+
+
+
+const [pizza,,risotto] = [...restaurant.starterMenu,... restaurant.mainMenu]
+
+
+console.log(pizza,risotto);
+const {sat,...wd} = openingHours;
+console.log(Object.keys(wd))
+console.log(wd)
+
+const sumFun = (acc,value) => acc+ value;
+const num010 = range(0,10)
+console.log(num010)
+
+function sumup(...arr) {
+   return arr.reduce(sumFun)
+}
+
+console.log(sumup(1,6,8,9,12,34))
+console.log(1 && false)
+const val1 = false
+val1 && console.log('hello !!!')
+//for(let i of num010) console.log(i)
+console.log(arr.slice(-3,-1))
+
 /*
 ///////////////////////////////////////
 // String Methods Practice
